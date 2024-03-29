@@ -1,0 +1,87 @@
+/* swiper for thugs tales */
+.thug-swiper .swiper-button-next,
+.thug-swiper .swiper-button-prev {
+  display: block;
+  position: absolute;
+}
+.thug-swiper .swiper-button-next::after,
+.thug-swiper .swiper-button-prev::after {
+  content: "";
+}
+
+.thug-swiper .thug-tales-button-next {
+  height: fit-content;
+  /* border: solid black; */
+  right: 15vw;
+  top: 50%;
+}
+.thug-swiper .thug-tales-button-prev {
+  height: fit-content;
+  /* border: solid black; */
+  left: 15vw;
+  top: 50%;
+}
+.thug-swiper .swiper-pagination {
+  bottom: 10px !important;
+  gap: 0px;
+}
+.thug-swiper .swiper-pagination .swiper-pagination-bullet {
+  background-color: white;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+}
+.thug-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: yellow;
+  transform: scale(1.3);
+  /* box-shadow: inset 0 0 2px 2px yellow; */
+}
+
+@media screen and (max-width: 640px) {
+  /* pagination */
+  .swiper-pagination {
+    bottom: 10px !important;
+    gap: 0px;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    background-color: white;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: yellow;
+    transform: scale(1.3);
+    /* box-shadow: inset 0 0 2px 2px yellow; */
+  }
+
+  .thug-swiper .swiper-pagination {
+    bottom: 10px !important;
+  }
+  .thug-swiper .swiper-pagination .swiper-pagination-bullet {
+    background-color: yellow;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+  .thug-swiper .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: white;
+    transform: scale(1.3);
+    /* box-shadow: inset 0 0 2px 2px yellow; */
+  }
+  .thug-swiper .thug-tales-button-next {
+    height: 18px;
+    width: 18px;
+
+    /* border: solid black;2vw */
+    right: 0vw;
+    top: 50%;
+  }
+  .thug-swiper .thug-tales-button-prev {
+    height: 18px;
+    width: 18px;
+    /* border: solid black; */
+    left: 0vw;
+    top: 50%;
+  }
+}

@@ -1,0 +1,47 @@
+/* CERTIFICATE */
+#certificate-container {
+  background-image: url("/assets/quiz/result/Blue grunge bg.webp"),
+    url("/assets/quiz/result/BG quiz 1.webp");
+  /* background-position: center,auto; */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* border: solid red; */
+  overflow: hidden;
+}
+
+#certificate-section {
+  /* background-color: #f6e5db; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 2;
+  /* border: solid; */
+  height: 90%;
+}
+
+#certificate-section span {
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+}
+#certificate-section img {
+  /* width: 100%; */
+  /* max-width: 700px; */
+}
+
+#download-btn {
+  color: white;
+  background: linear-gradient(to right, rgb(179, 7, 7), rgb(96, 5, 5));
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#certificate-section a {
+  color: #787777;
+}

@@ -1,0 +1,237 @@
+#language a {
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  right: 3%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background-color: #143f7c;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+#home_nav {
+  position: absolute;
+  z-index: 1;
+  top: 2%;
+  left: 3%;
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold;
+  z-index: 9;
+  border-radius: 20px;
+}
+#home_nav svg {
+  fill: #042b61;
+  width: 3vw;
+}
+.home_nav-inner-d {
+  color: #deda0d !important;
+  top: 10px;
+  margin: 25px 0 0 10px;
+}
+.home_nav-inner-m {
+  color: #deda0d !important;
+  top: 10px;
+  margin: 15px 0 0 1px;
+  font-size: 40px !important;
+}
+
+.mb1 {
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: #143f7c;
+  z-index: 9999;
+  box-shadow: 1px 1px 4px black;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.mb2 {
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: bold;
+  background-color: #143f7c;
+  z-index: 9999;
+  box-shadow: 1px 1px 4px black;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* START */
+#start-header {
+  background-image: url("/assets/quiz/Bg.webp");
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#start-header img {
+  object-fit: contain;
+  height: 100%;
+  border: solid;
+}
+#line-wire {
+  width: 100%;
+  margin-top: -3vw;
+  position: relative;
+  z-index: 2;
+}
+
+#header-end {
+  background-image: url("/assets/quiz/FG.webp"),
+    url("/assets/quiz/Bg Whole Ui.webp");
+  height: calc(100% - 15vh);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-size: 100%;
+  padding-top: 20px;
+}
+#header-end div {
+  height: 80%;
+  width: fit-content;
+  object-fit: contain;
+  margin: auto;
+  position: relative;
+  right: 3%;
+  overflow: hidden;
+  height: 100%;
+}
+#header-end div img {
+  height: 100%;
+  width: fit-content;
+  object-fit: contain;
+  margin: auto;
+  margin-top: 140px;
+  height: 75%;
+}
+
+#start-btn {
+  border: 2px solid whites;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background-color: #780707;
+  border: 2px solid #feb180;
+  width: fit-content;
+
+  position: absolute;
+  padding: 7px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px rgb(110, 109, 109);
+
+  /* top: 3%; */
+  /* right: 22%; */
+  font-size: 28px;
+  z-index: 2;
+}
+
+#start-btn:hover {
+  box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1080px) {
+  #home_nav svg {
+    width: 4vw;
+  }
+}
+/* smaller devices */
+@media screen and (max-width: 740px) {
+  #home_nav svg {
+    width: 11vw;
+  }
+
+  /* START */
+  #start-header {
+    background-image: url("/assets/quiz/Bg.webp");
+    height: 31%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    position: relative;
+  }
+  #start-header img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+  #line-wire {
+    width: 100%;
+    margin-top: 2.5vw;
+    position: absolute;
+    top: 45%;
+
+    z-index: 2;
+  }
+
+  #header-end {
+    background-image: url("/assets/quiz/ForeGround.webp"),
+      url("/assets/quiz/Whole UI Bg.webp");
+    height: calc(100% - 31%);
+    background-size: cover !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-size: 100%;
+    padding-top: 0px;
+
+    overflow: hidden;
+  }
+  #header-end div {
+    height: 100%;
+    width: 90%;
+    object-fit: contain;
+    margin: auto;
+    position: relative;
+    right: 30px;
+    overflow: hidden;
+  }
+  #header-end div img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    margin: 0;
+    margin-top: 8vw;
+  }
+  #start-btn {
+    border: 2px solid white;
+    font-size: 20px !important;
+    font-weight: bold;
+    color: white;
+    background-color: #780707;
+    border: 2px solid #feb180;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    padding: 7px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px rgb(110, 109, 109);
+
+    /* top: 6%; */
+    /* right: 20%; */
+  }
+
+  #start-btn:hover {
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+  }
+}
+@media (max-width: 600px) {
+  #start {
+    height: 400px;
+    top: auto;
+    bottom: 8% !important;
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  #start-btn {
+    font-size: 150%;
+  }
+}

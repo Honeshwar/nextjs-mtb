@@ -1,0 +1,415 @@
+/* RESULT */
+#result-container {
+  /* background: url("img/Desktop/Master Quiz section/Blue Bg.webp") no-repeat; */
+  background-size: contain;
+  display: flex;
+  z-index: 1;
+  background-color: #145e91;
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/quiz/result/Blue grunge bg.webp"),
+    url("/assets/quiz/result/BG quiz 1.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* border: solid red; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#result {
+  /* background-color: #f6e5db; */
+  border-radius: 20px;
+  height: 500px;
+  margin-top: 3%;
+  z-index: 2;
+  /* border: 2px solid red; */
+  margin-top: -30px;
+}
+
+#score-container {
+  background-color: #6397f7;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  z-index: 2;
+}
+
+#result a {
+  z-index: 2;
+  color: #bbb9b9 !important;
+}
+#result > p,
+#result div p {
+  color: #fff;
+}
+#result > p {
+  padding-top: 0 !important;
+}
+
+#zero-score-img {
+  width: 200px;
+}
+
+#reset-btn {
+  background: #ff7934;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cancel-btn {
+  color: white;
+  background: linear-gradient(to right, rgb(179, 7, 7), rgb(96, 5, 5));
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#result div[class="mb-2"] {
+  margin-top: -15px !important;
+}
+
+@media (max-width: 600px) {
+  #certificate-container {
+    /* background-image:url('img/Desktop/Master Quiz section/Blue grunge bg.webp') ,url('img/Desktop/Master Quiz section/BG quiz All.webp') ; */
+    /* background-position: center,auto; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* border: solid red; */
+    overflow: hidden;
+    background: url(/assets/quiz/result/bg.webp) no-repeat;
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-image: url("/assets/quiz/result/Blue grunge bg.webp"),
+      url("/assets/quiz/result/BG quiz 1.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* border: solid red; */
+    overflow: hidden;
+  }
+  #score-container {
+    height: 150px;
+    width: 150px;
+  }
+
+  #zero-score-img {
+    /* border: solid; */
+    width: 30%;
+    width: 150px;
+  }
+
+  #zero-score-img img {
+    /* height: 50%; */
+    width: 100%;
+    border: solid;
+  }
+
+  #result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #result {
+    height: 482px;
+  }
+
+  #cancel-btn {
+    font-size: 16px;
+  }
+
+  #reset-btn {
+    font-size: 16px;
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* quiz result */
+
+#quiz-result {
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/quiz/result/Blue grunge bg.webp"),
+    url("/assets/quiz/result/BG quiz 1.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* border: solid red; */
+  overflow: hidden;
+}
+#quiz-zero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+#quiz-zero img {
+  /* height: 50%; */
+  width: 50%;
+  max-width: 300px;
+}
+#quiz-zero div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#quiz-zero div img {
+  width: 40%;
+}
+
+@media screen and (max-width: 740px) {
+  #quiz-zero div img {
+    width: 40%;
+  }
+}
+#quiz-normal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+#quiz-normal img {
+  /* height: 50%; */
+  width: 40%;
+  max-width: 700px;
+}
+#quiz-normal div {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+#quiz-normal div img {
+  width: 30%;
+  max-width: 450px;
+}
+
+@media screen and (max-width: 740px) {
+  #quiz-normal div img {
+    width: 45%;
+  }
+  #quiz-normal {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  #quiz-normal img {
+    /* height: 40%; */
+    /* width: 40%; */
+    /* max-width: 700px; */
+    width: 80%;
+  }
+  #quiz-normal div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+/* share modal */
+#share-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  background-color: #1435918e;
+}
+#share-wrapper {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.8rem;
+  width: 300px;
+  height: fit-content;
+  color: white;
+  background-color: #145e91;
+  font-weight: bolder;
+  padding: 30px 10px 40px 10px;
+  gap: 20px;
+  position: relative;
+}
+#share-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+#share-icons img {
+  width: 50px;
+}
+#close-share {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+@media screen and (max-width: 740px) {
+  #share-icons img {
+    width: 40px;
+  }
+  #share-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  #share-wrapper {
+    gap: 10px;
+  }
+}
+
+/* RESULT */
+#result-container {
+  /* background: url("img/Desktop/Master Quiz section/Blue Bg.webp") no-repeat; */
+  background-size: contain;
+  display: flex;
+  z-index: 1;
+  background-color: #145e91;
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/quiz/result/Blue grunge bg.webp"),
+    url("/assets/quiz/result/BG quiz 1.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* border: solid red; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#result {
+  /* background-color: #f6e5db; */
+  border-radius: 20px;
+  /* height: 500px; */
+  height: 90%;
+  /* margin-top: 3%; */
+  z-index: 2;
+  /* border: 2px solid red; */
+
+  justify-content: center !important;
+  /* col-md-4 col-11 d-flex flex-column 
+    justify-content-center gap-2 align-items-center */
+}
+
+#score-container {
+  /* background-color: #f79c63; */
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 3.5rem;
+  font-weight: bold;
+  /* color: #822d06; */
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  z-index: 2;
+}
+
+#result a {
+  z-index: 2;
+  color: #bbb9b9 !important;
+}
+#result > p,
+#result div p {
+  color: #fff;
+}
+
+/* #zero-score-img{
+    width: 20px;
+  } */
+
+#reset-btn {
+  background: #ff7934;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cancel-btn {
+  color: white;
+  background: linear-gradient(to right, rgb(179, 7, 7), rgb(96, 5, 5));
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 3px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 10px;
+  margin-top: 20px !important;
+}
+
+#result div p {
+  font-size: 20px;
+  margin-bottom: 10px !important;
+}
+
+#facebook-link-score img,
+#whatsapp-link-score img,
+#twitter-link-score img {
+  height: 40px !important;
+  width: 40px !important;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 740px) {
+  .second-img .mamta-play,
+  .mamta-pause {
+    font-size: 25px !important;
+  }
+}

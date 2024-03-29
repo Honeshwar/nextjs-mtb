@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+@font-face {
+  font-family: "dangerous";
+  src: url("/fonts/dangeragendaDEMO.otf") format("woff2");
+}
+@font-face {
+  font-family: "book";
+  src: url("/fonts/Gotham Book Font.otf") format("woff2");
+}
+@font-face {
+  font-family: "personal";
+  src: url("/fonts/Personal Services.woff2") format("woff2");
+}
+@font-face {
+  font-family: "yatra";
+  src: url("/fonts/TEKO-SEMIBOLD.woff2") format("woff2");
+}
+
+@layer utilities {
+  .font-dangerous {
+    font-family: "dangerous";
+  }
+  .font-yatra {
+    font-family: "yatra";
+  }
+  .font-book {
+    font-family: "book";
+  }
+  .font-personal {
+    font-family: "personal";
+  }
+  .bg-stw-mobile {
+    background-image: url("/assets/spinthewheel/Bg mobile.webp");
+  }
+  .bg-stw-desktop {
+    background-image: url("/assets/spinthewheel/Bg desktop.webp");
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

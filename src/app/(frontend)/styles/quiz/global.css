@@ -1,0 +1,21 @@
+/* GLOBAL */
+.body {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  width: 100%;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.section-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+}
