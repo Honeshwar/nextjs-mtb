@@ -1,4 +1,5 @@
 "use client";
+//@ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 // import { Video } from "@splidejs/splide-extension-video";
 // Default theme
