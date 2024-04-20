@@ -26,13 +26,15 @@ function BJPLiveDescendant({
   title: string;
 }) {
   const { show } = useDelayContext();
+
   return (
     <>
       {show && (
         <>
           <br />
+          {/* mt-4 */}
           <h3
-            className="head1 pb-1 pb-md-4 mt-4"
+            className="head1 pb-1 pb-md-4 mt-5"
             style={{
               position: "relative",
               zIndex: "2",

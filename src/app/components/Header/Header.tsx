@@ -25,7 +25,7 @@ export default function Header({ lang }: { lang: string }) {
       >
         <div
           className="manifesto_redirect"
-          style={{ backgroundColor: "transparent", width: "80%" }}
+          style={{ backgroundColor: "transparent" }}
         >
           <a
             href={`https://modikiguarantee.bjp.org/${
@@ -41,7 +41,7 @@ export default function Header({ lang }: { lang: string }) {
           width={1520}
           height={750}
           className="d-none d-md-block"
-          style={{ width: "100%", height: "100vh" }}
+          style={{ width: "100%", height: "100vh", minHeight: "100vh" }}
           src={lang === "hi" ? "/img/d.webp" : "/img/d_english.webp"}
           alt="pebms header banner"
           placeholder="blur"
@@ -52,7 +52,7 @@ export default function Header({ lang }: { lang: string }) {
           width={380}
           height={700}
           className="d-block d-md-none w-100"
-          style={{ height: "fit-content" }}
+          style={{ height: "fit-content", minHeight: "100vh" }}
           src={lang === "hi" ? "/img/m.webp" : "/img/m_english.webp"}
           alt="pebms header banner"
           placeholder="blur"
@@ -66,7 +66,7 @@ export default function Header({ lang }: { lang: string }) {
           style={{
             position: "absolute",
             bottom: "0",
-            height: "100%",
+            height: "90%",
             width: "100%",
             background:
               "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(48,45,87,1) 100%,  rgba(124,121,124,1) 100%)",

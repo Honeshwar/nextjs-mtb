@@ -2,7 +2,7 @@
 // import "bootstrap/dist/js/bootstrap.bundle.min.js"; //only use in browser so also use with use client declaration, not in server component, otherwise error will be thrown
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 interface Navbar_DATA {
   hi: {
@@ -22,13 +22,13 @@ export default function WrapperNavbar({
   base64: string;
   lang: string;
 }) {
-  useEffect(() => {
-    //directives to ignore typescript checking
-    // @ts-ignore
-    import("bootstrap/dist/js/bootstrap.bundle.min.js")
-      .then(() => console.log("Bootstrap loaded"))
-      .catch((error) => console.error("Error loading Bootstrap:", error));
-  }, []);
+  // useEffect(() => {
+  //   //directives to ignore typescript checking
+  //   // @ts-ignore
+  //   import("bootstrap/dist/js/bootstrap.bundle.min.js")
+  //     .then(() => console.log("Bootstrap loaded"))
+  //     .catch((error) => console.error("Error loading Bootstrap:", error));
+  // }, []);
 
   // nested: so less condional rendering like lang === "hi"
   const DATA = {
@@ -36,13 +36,13 @@ export default function WrapperNavbar({
       navText: [
         {
           id: "nav-0",
-          text: "क्विज़",
-          href: "#quiz_section",
+          text: "फिर एक बार मोदी सरकार क्योंकि",
+          href: "#why_modi",
         },
         {
           id: "nav-1",
-          text: "मोदी जरूरी है",
-          href: "#modi-zaroori-hain",
+          text: "भाजपा लाइव",
+          href: "#bjp-live",
         },
         {
           id: "nav-2",
@@ -56,6 +56,11 @@ export default function WrapperNavbar({
         },
         {
           id: "nav-4",
+          text: "क्विज़",
+          href: "#quiz_section",
+        },
+        {
+          id: "nav-5",
           text: "विकसित भारत की ओर",
           href: "#promise",
         },
@@ -85,13 +90,13 @@ export default function WrapperNavbar({
       navText: [
         {
           id: "nav-0",
-          text: "Quiz",
-          href: "#quiz_section",
+          text: "Phir Ek Baar Modi Sarkar Kyunki",
+          href: "#why_modi",
         },
         {
           id: "nav-1",
-          text: "Modi Zaroori Hain",
-          href: "#modi-zaroori-hain",
+          text: "BJP Live",
+          href: "#bjp-live",
         },
         {
           id: "nav-2",
@@ -105,6 +110,11 @@ export default function WrapperNavbar({
         },
         {
           id: "nav-4",
+          text: "Quiz",
+          href: "#quiz_section",
+        },
+        {
+          id: "nav-5",
           text: "Towards a Developed Bharat",
           href: "#promise",
         },
@@ -138,7 +148,7 @@ export default function WrapperNavbar({
     // bg-body-tertiary
     <nav className="navbar navbar-expand-lg  py-md-0">
       <div className="container-fluid px-2 px-md-5 py-md-0">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href={lang === "hi" ? "/" : "/en/"}>
           <Image
             width={125}
             height={86}
@@ -205,7 +215,7 @@ export default function WrapperNavbar({
  *  <li className="nav-item">
               <a
                 className="nav-link nav-right-border"
-                href="#modi-zaroori-hain"
+                href="#why_modi"
               >
                 मोदी जरूरी है
               </a>

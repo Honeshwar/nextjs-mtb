@@ -16,6 +16,15 @@ export default function Video({
     if (modalRef.current) {
       modalRef.current!.click();
     }
+
+    // stop already played videos
+    (document.getElementById("kaamdhar_video") as HTMLVideoElement)!.pause();
+    const videos = document.getElementsByTagName("video");
+    const currVideo = document.getElementById("video1");
+    for (let i = 0; i < videos.length; i++) {
+      if (videos[i] !== currVideo) videos[i].pause();
+    }
+    // (currVideo as any).play();
   }, []);
   const link = `${process.env.NEXT_PUBLIC_API_URL}/videos?id=${videoId}&lang=${
     lang === "hi" ? "hi" : "en"

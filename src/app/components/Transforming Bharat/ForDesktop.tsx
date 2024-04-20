@@ -2,6 +2,8 @@
 import { useState } from "react";
 import ImageCard from "./ImageCard";
 import Video from "./Video";
+import dynamic from "next/dynamic";
+const LazyVideo = dynamic(() => import("./Video"), { ssr: false });
 
 export default function ForDesktop({ lang }: { lang: string }) {
   const [videoId, setVideoId] = useState(-1);
@@ -90,7 +92,7 @@ export default function ForDesktop({ lang }: { lang: string }) {
         )}
       </div>
       {videoId !== -1 && (
-        <Video lang={lang} videoId={videoId} setVideoId={setVideoId} />
+        <LazyVideo lang={lang} videoId={videoId} setVideoId={setVideoId} />
       )}
     </>
   );

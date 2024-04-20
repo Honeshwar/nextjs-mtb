@@ -3,19 +3,7 @@ import "./styles/swiperSlider.css";
 import { Metadata } from "next"; // import for types
 import data from "./utils/data";
 import Header from "./components/Header/Header";
-import Counter from "./components/Counter/Counter";
 import dynamic from "next/dynamic";
-import CampaignAnthem from "./components/Campaign Anthem/CampaignAnthem";
-import TransformBharat from "./components/Transforming Bharat/TransformBharat";
-import QuizBanner from "./components/Banner/WrapperQuizBanner";
-import TowardDeplopedBharat from "./components/Towards A Developed Bharat/TowardDeplopedBharat";
-import Footer from "./components/Footer/Footer";
-import BJPLive from "./components/BJP Live/BJPLive";
-import VideoSlider from "./components/Once Again Modi Sarkar KyunKi/videoSlider";
-import ImageSlider from "./components/Sanathan/ImageSlider";
-import Sanathan from "./components/Sanathan/Sanathan";
-import Agenda from "./components/Agenda/Agenda";
-import MediaCoverage from "./components/Media Coverage/MediaCoverage";
 export const metadata: Metadata = data.hi.Metadata; //naming export key=metadata
 
 const LazyCounter = dynamic(() => import("./components/Counter/Counter"), {
@@ -59,7 +47,11 @@ const LazyFooter = dynamic(() => import("./components/Footer/Footer"), {
 });
 export default function Home() {
   return (
-    <div className="body-main-site" style={{ position: "relative" }}>
+    <div
+      id="hindi-page"
+      className="body-main-site"
+      style={{ position: "relative" }}
+    >
       <Header lang="hi" />
       <LazyCounter title="संकल्प लिए जा चुके हैं" />
       <LazyVideoSlider title="फिर एक बार मोदी सरकार क्योंकि" lang="hi" />

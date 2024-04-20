@@ -1,8 +1,10 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import swiper from "swiper";
+//@ts-ignore
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Video } from "@splidejs/splide-extension-video";
+// Default theme
+import "@splidejs/react-splide/css";
+
 import { useEffect, useRef, useState } from "react";
 import {
   DelayContextProvider,
@@ -15,42 +17,181 @@ export default function VideoSlider({
   title: string;
   lang: string;
 }) {
-  const [isMobile, setIsMobile] = useState(true);
-  useEffect(() => {
-    if (window.screen.width > 768) {
-      setIsMobile(false);
-    } else {
-      setIsMobile(true);
-    }
-  }, []);
+  // const [isMobile, setIsMobile] = useState(true);
+  // useEffect(() => {
+  //   if (window.screen.width > 768) {
+  //     setIsMobile(false);
+  //   } else {
+  //     setIsMobile(true);
+  //   }
+  // }, []);
 
   return (
     <DelayContextProvider>
-      <VideoSliderDescendant title={title} lang={lang} isMobile={isMobile} />
+      <VideoSliderDescendant title={title} lang={lang} />
     </DelayContextProvider>
   );
 }
 
-// onclick="playMJHVideo(event)"
-// onclick="playMJHVideo(event)"
-// onclick="playMJHVideo(event)"
-
 function VideoSliderDescendant({
   title,
   lang,
-  isMobile,
-}: {
+}: // isMobile,
+{
   title: string;
   lang: string;
-  isMobile: boolean;
+  // isMobile: boolean;
 }) {
   const MJH_Swiper = useRef<any>(null);
   const videoUrl = [
-    "/videos/why/1.mp4",
-    "/videos/why/2.mp4",
-    "/videos/why/3.mp4",
+    [
+      "/videos/why/1.mp4",
+      `/videos/why/thumbnails/${lang === "en" ? "en/" : ""}Aastha.jpeg`,
+    ],
+    [
+      "/videos/why/2.mp4",
+      `/videos/why/thumbnails/${lang === "en" ? "en/" : ""}Infra.jpeg`,
+    ],
+    [
+      "/videos/why/3.mp4",
+      `/videos/why/thumbnails/${
+        lang === "en" ? "en/" : ""
+      }ThreeGeneration.jpeg`,
+    ],
   ];
-  function playMJHVideo(e: any) {
+
+  const splideRef = useRef<any>(null);
+  const { show } = useDelayContext();
+
+  // useEffect(() => {
+  //   if (splideRef.current) {
+  //     splideRef.current.splide.on("mounted", (splide: any) => {
+  //       console.log("splide mounted", splide);
+
+  //     });
+  //   }
+  // // },[])
+  function playVideo(event: any) {
+    event.preventDefault();
+
+    // console.log("splide_Why_modi", localStorage.getItem("splide_Why_modi"));
+    // if (!localStorage.getItem("splide_Why_modi")) {
+    //   localStorage.setItem(
+    //     "splide_Why_modi",
+    //     JSON.stringify(splideRef.current)
+    //   );
+    // }
+    // console.log(
+    //   "play video splideRef.current.splide",
+    //   splideRef.current.splide,
+    //   splideRef.current
+    // );
+
+    //stop autoplay, by using api
+    const { Autoplay } = splideRef.current.splide.Components;
+    Autoplay.pause();
+
+    // stop already played videos
+    (document.getElementById("kaamdhar_video") as HTMLVideoElement)!.load();
+
+    const videoElement = event.target;
+    videoElement.play();
+    videoElement.controls = true;
+
+    splideRef.current.splide.on("moved", (splide: any) => {
+      console.log("splide move", splide);
+      videoElement.controls = false;
+      videoElement.paused();
+
+      // console.log("pause video", splideRef.current);
+      Autoplay.play();
+      // splideRef.current.options.autoplay = true;
+    });
+  }
+  const options = {
+    type: "loop",
+    perPage: 3,
+    perMove: 1,
+    autoplay: true,
+    interval: 3000,
+    focus: "center",
+    pagination: true,
+    arrows: true,
+    breakpoints: {
+      1000: { perPage: 3 },
+      768: { perPage: 1 },
+      576: { perPage: 1, gap: "1rem", padding: "30px" },
+    },
+    // Register the onMoved event handler
+    // onMoved: handleSlideChange,
+  };
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const { Autoplay } = splideRef.current.splide.Components;
+  //     Autoplay.pause();
+  //   }, 5000);
+  // });
+
+  return (
+    <>
+      {show && (
+        <section className="container-fluid mt-4" id="why_modi">
+          <h3 className="head mb-4">{title}</h3>
+          <Splide
+            ref={splideRef}
+            id="media"
+            className="splide "
+            role="group"
+            aria-label="Splide Basic HTML Example"
+            style={{ backgroundColor: "black" }}
+            options={options}
+          >
+            {/* <div className="splide__arrows">
+    <button className="splide__arrow splide__arrow--prev">Prev</button>
+    <button className="splide__arrow splide__arrow--next">Next</button>
+  </div> */}
+            {/* <div className="splide__arrow">
+              <button className="splide__arrow splide__arrow--prev">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  height="40"
+                  focusable="false"
+                >
+                  <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+                </svg>
+              </button>
+            </div> */}
+
+            {videoUrl?.map((url: string[], index: number) => (
+              <SplideSlide key={"why-" + (index + 1)}>
+                <div className="media-card">
+                  <div className="card-title text-center">
+                    <video
+                      onClick={playVideo}
+                      src={url[0]}
+                      preload="none"
+                      poster={url[1]}
+                      className="w-100  "
+                      width="100%"
+                      style={{ borderRadius: "18px" }}
+                      height="100%"
+                      // controls
+                    ></video>
+                  </div>
+                </div>
+              </SplideSlide>
+            ))}
+          </Splide>
+        </section>
+      )}
+    </>
+  );
+}
+/**
+ *  function playMJHVideo(e: any) {
     const videoElementActive = document.querySelector(
       ".MJH_swiper .swiper-slide-active video"
     ) as HTMLVideoElement;
@@ -91,11 +232,7 @@ function VideoSliderDescendant({
     }
   }
 
-  const { show } = useDelayContext();
-  return (
-    <>
-      {show && (
-        <section id="modi-zaroori-hain" className="mt-4 mt-md-5 pb-md-0 ">
+ <section id="modi-zaroori-hain" className="mt-4 mt-md-5 pb-md-0 ">
           <h3
             className="head1 pb-1 pb-md-4"
             style={{ position: "relative", zIndex: "2" }}
@@ -103,7 +240,7 @@ function VideoSliderDescendant({
             {title}
           </h3>
 
-          {/* mobile */}
+          {/* mobile 
           <Swiper
             ref={MJH_Swiper}
             slidesPerView={1}
@@ -156,7 +293,7 @@ function VideoSliderDescendant({
             </div>
           </Swiper>
 
-          {/* desktop */}
+          {/* desktop 
           <div className="container px-0 d-md-block d-none">
             <div className="row">
               <div className="col-4">
@@ -197,8 +334,4 @@ function VideoSliderDescendant({
               </div>
             </div>
           </div>
-        </section>
-      )}
-    </>
-  );
-}
+        </section> */

@@ -7,6 +7,9 @@ import {
   DelayContextProvider,
   useDelayContext,
 } from "@/app/context/DelayContext";
+import dynamic from "next/dynamic";
+
+const LazyShareModal = dynamic(() => import("./ShareModal"), { ssr: false });
 
 export default function TowardDeplopedBharat({
   title,
@@ -93,7 +96,7 @@ function TowardDeplopedBharatDescendant({
           </div>
 
           {showShareModal !== -1 && (
-            <ShareModal
+            <LazyShareModal
               showShareModal={showShareModal}
               setShowShareModal={setShowShareModal}
               shareText={lang === "hi" ? "अभिवादन" : "Greetings"}

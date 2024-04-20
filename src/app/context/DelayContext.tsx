@@ -8,7 +8,7 @@ function DelayContextProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 2000);
+    });
   }, []);
   return <context.Provider value={{ show }}>{children}</context.Provider>;
 }

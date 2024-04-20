@@ -29,8 +29,8 @@ function CampaignAnthemDescendant({
   poster: string;
   src: string;
 }) {
-  const kaamdaar = () => {};
   const { show } = useDelayContext();
+
   return (
     <>
       {show && (
@@ -44,6 +44,13 @@ function CampaignAnthemDescendant({
         </svg> */}
             {/* <!-- onclick="kaamdaar()" --> */}
             <video
+              onPlay={(e) => {
+                const videos = document.getElementsByTagName("video");
+                for (let i = 0; i < videos.length; i++) {
+                  if (videos[i] !== e.target) videos[i].pause();
+                }
+                (e.target as any).play();
+              }}
               id="kaamdhar_video"
               // loading="lazy"
               poster={poster}

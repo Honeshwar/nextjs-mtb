@@ -61,7 +61,11 @@ const LazyFooter = dynamic(() => import("../components/Footer/Footer"), {
 });
 export default function page() {
   return (
-    <div className="body-main-site" style={{ position: "relative" }}>
+    <div
+      id="english-page"
+      className="body-main-site"
+      style={{ position: "relative" }}
+    >
       <Header lang="en" />
       <LazyCounter title="Pledges Taken" />
       <LazyVideoSlider title="Phir Ek Baar Modi Sarkar Kyunki" lang="en" />

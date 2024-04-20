@@ -1,6 +1,10 @@
 import { getPlaiceholder } from "plaiceholder";
 import fs from "node:fs/promises";
 import WrapperCounter from "./WrapperCounter";
+import dynamic from "next/dynamic";
+// const LazyWrapperCounter = dynamic(() => import("./WrapperCounter"), {
+//   ssr: false,
+// });
 export default async function Counter({ title }: { title: string }) {
   const buffer = await fs.readFile("./public/img/sb.webp");
   const { base64 } = await getPlaiceholder(buffer);
